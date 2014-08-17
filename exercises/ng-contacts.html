@@ -16,15 +16,15 @@
     <div class="row">
         <aside class="col-lg-3">
             <ul class="list-group">
-                <li ng-repeat="contact in contacts">
-                    <a ng-href="" ng-click="select($index)">
-                        <span ng-bind="contact.firstName"></span>
+                <li ng-repeat="contact in contacts" class="list-group-item">
+                    <a ng-href="" ng-click="select(contact)">
+                        <span ng-bind="contact.firstName"></span>&NonBreakingSpace;<span ng-bind="contact.lastName"></span>
                     </a>
-                    <button type="button" class="btn btn-danger">
-                </li>>
+                    <button type="button" class="btn btn-danger" ng-click="delete($index)"></button>
+                </li>
             </ul>
-        </aside>
 
+        </aside>
         <article class="col-lg-offset-1 col-lg-8">
 
             <form novalidate role="form" name="form" class="form-horizontal" ng-submit="add()">
@@ -49,11 +49,11 @@
                 <div class="form-group">
                     <label for="city" class="col-sm-2 control-label">City</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" id="city" placeholder="City">
+                        <input type="text" class="form-control" id="city"  ng-model="currentContact.City" placeholder="City">
                     </div>
                     <label for="state" class="col-sm-1 control-label">State</label>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" id="state" placeholder="State">
+                        <input type="text" class="form-control" id="state"  ng-model="currentContact.State" placeholder="State">
                     </div>
                 </div>
                 <div class="form-group">
@@ -62,7 +62,7 @@
                         <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Add Contact</button>
                     </div>
                     <div class="col-sm-4">
-                        <button type="button" class="btn btn-warning">Cancel</button>
+                        <button type="button" class="btn btn-warning" ng-click="clear()">Clear</button>
                     </div>
                 </div>
             </form>
