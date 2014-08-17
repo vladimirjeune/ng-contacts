@@ -1,5 +1,5 @@
 {
-  "firebase": "glaring-fire-7316",
+  "firebase": "glaring-fire-7316",           // blazing-heat-2900
   "public": ".",
   "ignore": [
     "firebase.json",

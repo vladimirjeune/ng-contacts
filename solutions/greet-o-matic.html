@@ -17,10 +17,13 @@
     <input type="text" ng-model="userName" placeholder="or over here"/>
   </div>
   <br/><br/>
-  <h2>Hello <span>{{userName}}</span>, have a nice day!</h2>
+  <h2>Hello <span>{{userName}}</span>, have a nice day!</h2>   // 
+
 </div>
 
 <script>
+    "use strict"       // Should be placed before any other stmts can also use 'use strict'.  Script and function lvl
+                       // Be careful if you are mixing strict and not strict if you are using minification.
   var myGreeting = angular.module("Greet", []);
 
   myGreeting.controller('UserController', ['$scope', function ($scope) {

@@ -19,6 +19,10 @@ contactsApp.controller("ContactsController", ["$scope", "$firebase", function($s
     $scope.currentContact = {};
   };
 
+    $scope.clear = function() {
+      $scope.currentContact
+    };
+
   $scope.delete = function (index) {
     $scope.contacts.splice(index, 1);
   };
